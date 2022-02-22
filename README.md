@@ -44,7 +44,15 @@ and is implemented using the same Gym interface that the other two environments 
 
 ### Learning efficiency
 
+To compare the AAO and SAO algorithms in terms of learning efficiency, a specific metric must be created. Efficiency is often expressed as a fraction with the
+numerator being some kind of performance, and with the denominator being some kind of resource being consumed. One example of this form include miles per gallon
+(fuel efficiency).
 
+Learning efficiency can be expressed as a change in score divided by a change in time, or how much the algorithm can improve a policy in a given amount of time.
+
+Formally: Learning efficiency = Change in score / Change in time = (Trained policy score - random policy score) / (timesteps)
+
+Where score refers to the average undiscounted rewards in an episode and a random policy is one which selects actions according to a random uniform distribution.
 
 ### Experimental setup
 
