@@ -56,7 +56,12 @@ Where score refers to the average undiscounted rewards in an episode and a rando
 
 ### Experimental setup
 
+This experiment seeks to determine the mean learning efficiency of both the AAO and SAO algorithms. For each environment and algorithm, three runs will be conducted
+to determine mean learning efficiency. A run is defined as training an agent starting from a random policy and ending when a high score is reached, or a timestep
+limit is met, whichever comes first. Once a run is complete, the trained policy score and timesteps encountered are recorded, and the learning efficiency sample can
+be calculated.
 
+Additionally, score over time plots will also be produced, providing a useful visualization for the experiment results on all 3 environments.
 
 
 
@@ -65,6 +70,22 @@ Where score refers to the average undiscounted rewards in an episode and a rando
 
 ### CartPole-v1
 
+
+AAO Results
+
+| Run Number | Mean score achieved | Number of timesteps | Learning efficiency |
+| ---------- | ------------------- | ------------------- | ------------------- |
+|      1     | 196 | 2,000,000 | 8.65 * 10^-5 |
+|      2     | 219 | 2,000,000 | 9.8 * 10^-5  |
+|      3     | 185 | 2,000,000 | 8.1 * 10^-5  |
+
+SAO Results
+
+| Run Number | Mean score achieved | Number of timesteps | Learning efficiency |
+| ---------- | ------------------- | ------------------- | ------------------- |
+|      1     | 57 | 2,000,000 | 1.7 * 10^-5 |
+|      2     | 80 | 2,000,000 | 2.85 * 10^-5  |
+|      3     | 111 | 2,000,000 | 4.4 * 10^-5  |
 
 ### LunarLander-v2
 
