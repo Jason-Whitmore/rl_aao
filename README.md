@@ -87,10 +87,49 @@ SAO Results
 |      2     | 80 | 2,000,000 | 2.85 * 10^-5  |
 |      3     | 111 | 2,000,000 | 4.4 * 10^-5  |
 
+![CartPole-v1 results](./images/exp_results_CartPole-v1_image.png)
+
+
+
 ### LunarLander-v2
 
+AAO Results
+
+| Run Number | Mean score achieved | Number of timesteps | Learning efficiency |
+| ---------- | ------------------- | ------------------- | ------------------- |
+|      1     | 197 | 1,330,000 | 2.73 * 10^-4 |
+|      2     | 207 | 1,360,000 | 2.74 * 10^-4 |
+|      3     | 197 | 1,180,000 | 3.07 * 10^-4  |
+
+SAO Results
+
+| Run Number | Mean score achieved | Number of timesteps | Learning efficiency |
+| ---------- | ------------------- | ------------------- | ------------------- |
+|      1     | -34 | 2,000,000 | 6.6 * 10^-5 |
+|      2     | -7 | 2,000,000 | 7.95 * 10^-5  |
+|      3     | -115 | 2,000,000 | 2.55 * 10^-5  |
+
+![LunarLander-v2 results](./images/exp_results_LunarLander-v2_image.png)
 
 ### Gridworld-10x10-1r-v0
 
+
+AAO Results
+
+| Run Number | Mean score achieved | Number of timesteps | Learning efficiency |
+| ---------- | ------------------- | ------------------- | ------------------- |
+|      1     | -1.491 | 2,000,000 | 1.308 * 10^-6 |
+|      2     | 0.035 | 1,950,000 | 2.124 * 10^-6 |
+|      3     | -2.28 | 2,000,000 | 9.135 * 10^-7  |
+
+SAO Results
+
+| Run Number | Mean score achieved | Number of timesteps | Learning efficiency |
+| ---------- | ------------------- | ------------------- | ------------------- |
+|      1     | -1.942 | 2,000,000 | 1.08 * 10^-6 |
+|      2     | -1.277 | 2,000,000 | 1.415 * 10^-6  |
+|      3     | -3.573 | 2,000,000 | 2.67 * 10^-7  |
+
+![Gridworld-10x10-1r-v0 results](./images/exp_results_Gridworld-10x10-1r-v0_image.png)
 
 ## How to run
