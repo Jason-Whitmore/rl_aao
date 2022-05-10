@@ -153,4 +153,13 @@ The mean learning efficiency ratio is then 1.449 * 10^-6 / 9.207 * 10^-7 = appro
 
 This suggests that the AAO algorithm is 57.4% more learning efficient on the Gridworld-10x10-1r-v0 environment under similar conditions.
 
+## Conclusion
+
+Based on the results of these 3 experiments, the All Actions Optimization algorithm looks promising for achieving a higher level of learning efficiency
+compared to traditional model free reinforcement learning algorithms.
+
+Strangely, the learning efficiency ratio for the Gridworld-10x10-1r-v0 environment
+did not appear as high as the other environments, which could be worth investigation in future experiments.
+To improve confidence in the All Actions Optimization algorithm, it may be worth applying the experimental methodology in this project to many more environments, and collect more runs.
+
 ## How to run
