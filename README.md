@@ -90,6 +90,12 @@ SAO Results
 ![CartPole-v1 results](./images/exp_results_CartPole-v1_image.png)
 
 
+Under similar conditions, the AAO algorithm achieved a mean learning efficiency of 8.85 * 10^-5 over 3 runs, while the
+SAO algorithm achieved a mean learning efficiency of 2.98 * 10^-5 over 3 runs.
+
+The mean learning efficiency ratio is then 8.85 * 10^-5 / 2.98 * 10^-5 = approximately 2.97.
+
+This suggests that the AAO algorithm is 197% more learning efficient on the CartPole-v1 environment under similar conditions.
 
 ### LunarLander-v2
 
@@ -111,6 +117,14 @@ SAO Results
 
 ![LunarLander-v2 results](./images/exp_results_LunarLander-v2_image.png)
 
+
+Under similar conditions, the AAO algorithm achieved a mean learning efficiency of 2.85 * 10^-4 over 3 runs, while the
+SAO algorithm achieved a mean learning efficiency of 5.7 * 10^-4 over 3 runs.
+
+The mean learning efficiency ratio is then 2.85 * 10^-4 / 5.7 * 10^-4 = 5.
+
+This suggests that the AAO algorithm is 400% more learning efficient on the LunarLander-v2 environment under similar conditions.
+
 ### Gridworld-10x10-1r-v0
 
 
@@ -131,5 +145,12 @@ SAO Results
 |      3     | -3.573 | 2,000,000 | 2.67 * 10^-7  |
 
 ![Gridworld-10x10-1r-v0 results](./images/exp_results_Gridworld-10x10-1r-v0_image.png)
+
+Under similar conditions, the AAO algorithm achieved a mean learning efficiency of 1.449 * 10^-6 over 3 runs, while the
+SAO algorithm achieved a mean learning efficiency of 9.207 * 10^-7 over 3 runs.
+
+The mean learning efficiency ratio is then 1.449 * 10^-6 / 9.207 * 10^-7 = approximately 1.574.
+
+This suggests that the AAO algorithm is 57.4% more learning efficient on the Gridworld-10x10-1r-v0 environment under similar conditions.
 
 ## How to run
