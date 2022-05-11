@@ -17,7 +17,6 @@ import gym
 import math
 import threading
 from csv_writer import csv_writer
-from CustomRMSProp import CustomRMSProp
 import cProfile
 from gridworld_10x10_1r_v0 import Gridworld10x10
 
@@ -141,7 +140,7 @@ class Experiment:
         return np.array(state, dtype="float32")
 
 
-    def get_action(self, state: "ndarray") -> "int, float":
+    def get_action(self, state: "ndarray") -> "Tuple[int, float]":
         """
         Selects an action from the current policy.
 

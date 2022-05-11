@@ -163,3 +163,19 @@ did not appear as high as the other environments, which could be worth investiga
 To improve confidence in the All Actions Optimization algorithm, it may be worth applying the experimental methodology in this project to many more environments, and collect more runs.
 
 ## How to run
+
+All of the python files needed to run this project are already in the high level folder as rl_aao.py, csv_writer.py, and gridworld_10x10_1r_v0.py.
+
+The experiment is run from the rl_aao.py file and one experiment run can be executed using the following terminal command:
+
+```
+python3 rl_aao.py
+```
+
+The bottom of the rl_aao.py file contains all of the hyperparameters that can be changed for different experimental conditions.
+
+As the hyperparameters are set up currently, experiments can be conducted exactly as presented in the paper by simple changing the index variable to either
+0 (CartPole-v1), 1 (LunarLander-v2), and 2 (Gridworld-10x10-1r-v0).
+
+There are some python package dependencies that will print to the terminal upon program execution. To ensure consistency, please make sure the version numbers
+match with the package versions currently installed.
