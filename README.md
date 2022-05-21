@@ -19,7 +19,13 @@ Due to these costs, it remains an open problem within DRL and finding more effic
 In order to determine the performance of the AAO algorithm, an experiment will be conducted to determine
 learning efficiency compared to a more traditional algorithm.
 
-### Baseline algorithm: SAO
+### Baseline algorithm: TD SAO
+
+The One Step Actor Critic algorithm is a traditional DRL algorithm due to it's simplicity and ease of implementation. However, in it's normal form, the
+algorithm only maximizes the value of a single start state. Instead, the algorithm must be modified to maximize the value at every state. This is done in
+order to match the optimization objectives of the AAO algorithm, which also makes for a fairer comparison between the two algorithms.
+
+![SAO Psuedocode](images/sao_code.png)
 
 
 ### Environments
@@ -65,7 +71,7 @@ Additionally, score over time plots will also be produced, providing a useful vi
 
 
 
-## Results and Discussion
+## Results
 
 
 ### CartPole-v1
