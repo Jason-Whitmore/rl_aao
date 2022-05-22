@@ -11,8 +11,19 @@ Existing deep reinforcement learning (DRL) methods can be costly to train agents
 Even training an agent in a simple environment like Atari Breakout can take millions of timesteps to achieve humanlike performance.
 Due to these costs, it remains an open problem within DRL and finding more efficient methods of training is highly desirable.
 
-## All Actions Optimization
+## All Actions Optimization (AAO)
 
+The aim of the All Actions Optimization algorithm is to make improvements to the policy based on feedback signals on all possible actions, rather than just
+optimizing using the feedback signal of the action just previously taken.
+
+This algorithm still includes the standard actor critic approach to solving Markov Decision processes where the value function under the policy is trained (policy evaluation) before improvements to the policy are made (policy improvement).
+
+The value function uses the parameterized policy function in conjuntion with a learned Q function in order to evaluate the policy.
+
+To improve the policy, the value function of a state is subtracted from the Q value of an action at the same state to give the TD learning signal for that action and at that state. The changes to the policy parameters for each action at the state are added together before being applied to the parameters.
+
+
+![AAO Psuedocode](images/aao_code.png)
 
 ## Experiment
 
