@@ -1,6 +1,6 @@
 # Reinforcement Learning: All Actions Optimization
 
-This reinforcement learning (RL) project seeked to implement, test, and compare a new, novel RL algorithm to a traditional
+This reinforcement learning (RL) project seeks to implement, test, and compare a new, novel RL algorithm to a traditional
 RL algorithm similar to One Step TD learning.
 
 The complete paper is available [here]()
@@ -9,18 +9,18 @@ The complete paper is available [here]()
 
 Existing deep reinforcement learning (DRL) methods can be costly to train agents, both in regards to money and time.
 Even training an agent in a simple environment like Atari Breakout can take millions of timesteps to achieve humanlike performance.
-Due to these costs, it remains an open problem within DRL and finding more efficient methods of training is highly desirable.
+Due to these costs, it remains an open problem within DRL and finding more efficient methods of training agents is highly desirable.
 
 ## All Actions Optimization (AAO)
 
 The aim of the All Actions Optimization algorithm is to make improvements to the policy based on feedback signals on all possible actions, rather than just
 optimizing using the feedback signal of the action just previously taken.
 
-This algorithm still includes the standard actor critic approach to solving Markov Decision processes where the value function under the policy is trained (policy evaluation) before improvements to the policy are made (policy improvement).
+This algorithm still includes the standard actor critic approach to solving Markov Decision Processes where the value function under the policy is trained (policy evaluation) before improvements to the policy are made (policy improvement).
 
-The value function uses the parameterized policy function in conjuntion with a learned Q function in order to evaluate the policy.
+The value function uses the parameterized policy function in conjunction with a learned Q function in order to evaluate the policy.
 
-To improve the policy, the value function of a state is subtracted from the Q value of an action at the same state to give the TD learning signal for that action and at that state. The changes to the policy parameters for each action at the state are added together before being applied to the parameters.
+To improve the policy, the value function of a state is subtracted from the Q value of an action at the same state to give the TD learning signal (feedback) for that action at that state. The changes to the policy parameters for each action at the state are added together before being applied to the parameters.
 
 
 ![AAO Psuedocode](images/aao_code.png)
@@ -30,9 +30,9 @@ To improve the policy, the value function of a state is subtracted from the Q va
 In order to determine the performance of the AAO algorithm, an experiment will be conducted to determine
 learning efficiency compared to a more traditional algorithm.
 
-### Baseline algorithm: TD SAO
+### Baseline algorithm: SAO
 
-The One Step Actor Critic algorithm is a traditional DRL algorithm due to it's simplicity and ease of implementation. However, in it's normal form, the
+The One Step Actor Critic algorithm is a traditional DRL algorithm due to it's simplicity and ease of implementation. However, in its normal form, the
 algorithm only maximizes the value of a single start state. Instead, the algorithm must be modified to maximize the value at every state. This is done in
 order to match the optimization objectives of the AAO algorithm, which also makes for a fairer comparison between the two algorithms.
 
@@ -41,8 +41,8 @@ order to match the optimization objectives of the AAO algorithm, which also make
 
 ### Environments
 
-The experiment will test both the AAO and SAO algorithms on 3 environments: CartPole-v1, LunarLander-v2, and Gridworld-10x10-1r-v0.
-These environments are simple enough that a few runs can be conducted feasibly and vary enough to determine the algorithm's general learning abilities.
+The experiment will test both the AAO and SAO algorithms on 3 different environments: CartPole-v1, LunarLander-v2, and Gridworld-10x10-1r-v0.
+These environments are simple enough that a few runs can be conducted feasibly and vary enough to determine the algorithms' general learning abilities.
 
 CartPole-v1 is a simple environment that tasks the agent with manuevering a car along an axis such that a vertical pole is balanced on top of it.
 This environment is often used to test DRL algorithm implementations and can be learned reasonably fast, making it a good starting point for this experiment.
@@ -52,17 +52,17 @@ to fire and seeks to land the spacecraft safely in a designated area. This envir
 to the CartPole-v1 environment.
 
 Gridworld-10x10-1r-v0 is a simple environment that tasks the agent with navigating through a 10 by 10 grid to collect a single reward, which once collected, ends
-the environment. Unlike the other environments, this environment contains a sparse reward function, which gives the agent 0 reward on all actions except for when
-the sole reward is collected, when a reward of 1 is given. This sparse reward function provides another challenge for both the AAO and SAO algorithm in the
+the episode. Unlike the other environments, this environment contains a sparse reward function, which gives the agent 0 reward on all actions except for when
+the sole reward is collected, when a reward of 1 is given. This sparse reward function provides another challenge for both the AAO and SAO algorithms in the
 experiment.
 
-CartPole-v1 and LunarLander-v2 are environments provided by OpenAI's Gym package. The Gridworld-10x10-1r-v0 is a custom environment that was made for this project,
+CartPole-v1 and LunarLander-v2 are environments provided by OpenAI's Gym package. The Gridworld-10x10-1r-v0 environment is a custom environment that was made for this project,
 and is implemented using the same Gym interface that the other two environments use.
 
 ### Learning efficiency
 
 To compare the AAO and SAO algorithms in terms of learning efficiency, a specific metric must be created. Efficiency is often expressed as a fraction with the
-numerator being some kind of performance, and with the denominator being some kind of resource being consumed. One example of this form include miles per gallon
+numerator being some kind of performance, and with the denominator being some kind of resource being consumed. One example of this form is miles per gallon
 (fuel efficiency).
 
 Learning efficiency can be expressed as a change in score divided by a change in time, or how much the algorithm can improve a policy in a given amount of time.
@@ -110,9 +110,9 @@ SAO Results
 Under similar conditions, the AAO algorithm achieved a mean learning efficiency of 8.85 * 10^-5 over 3 runs, while the
 SAO algorithm achieved a mean learning efficiency of 2.98 * 10^-5 over 3 runs.
 
-The mean learning efficiency ratio is then 8.85 * 10^-5 / 2.98 * 10^-5 = approximately 2.97.
+The mean learning efficiency ratio is then (8.85 * 10^-5) / (2.98 * 10^-5) = approximately 2.97.
 
-This suggests that the AAO algorithm is 197% more learning efficient on the CartPole-v1 environment under similar conditions.
+This suggests that the AAO algorithm is 197% more learning efficient than the SAO algorithm on the CartPole-v1 environment under similar conditions compared to the SAO algorithm.
 
 ### LunarLander-v2
 
@@ -138,9 +138,9 @@ SAO Results
 Under similar conditions, the AAO algorithm achieved a mean learning efficiency of 2.85 * 10^-4 over 3 runs, while the
 SAO algorithm achieved a mean learning efficiency of 5.7 * 10^-4 over 3 runs.
 
-The mean learning efficiency ratio is then 2.85 * 10^-4 / 5.7 * 10^-4 = 5.
+The mean learning efficiency ratio is then (2.85 * 10^-4) / (5.7 * 10^-4) = 5.
 
-This suggests that the AAO algorithm is 400% more learning efficient on the LunarLander-v2 environment under similar conditions.
+This suggests that the AAO algorithm is 400% more learning efficient than the SAO algorithm on the LunarLander-v2 environment under similar conditions.
 
 ### Gridworld-10x10-1r-v0
 
@@ -166,18 +166,18 @@ SAO Results
 Under similar conditions, the AAO algorithm achieved a mean learning efficiency of 1.449 * 10^-6 over 3 runs, while the
 SAO algorithm achieved a mean learning efficiency of 9.207 * 10^-7 over 3 runs.
 
-The mean learning efficiency ratio is then 1.449 * 10^-6 / 9.207 * 10^-7 = approximately 1.574.
+The mean learning efficiency ratio is then (1.449 * 10^-6) / (9.207 * 10^-7) = approximately 1.574.
 
-This suggests that the AAO algorithm is 57.4% more learning efficient on the Gridworld-10x10-1r-v0 environment under similar conditions.
+This suggests that the AAO algorithm is 57.4% more learning efficient than the SAO algorithm on the Gridworld-10x10-1r-v0 environment under similar conditions.
 
 ## Conclusion
 
 Based on the results of these 3 experiments, the All Actions Optimization algorithm looks promising for achieving a higher level of learning efficiency
-compared to traditional model free reinforcement learning algorithms.
+compared to traditional reinforcement learning algorithms.
 
 Strangely, the learning efficiency ratio for the Gridworld-10x10-1r-v0 environment
-did not appear as high as the other environments, which could be worth investigation in future experiments.
-To improve confidence in the All Actions Optimization algorithm, it may be worth applying the experimental methodology in this project to many more environments, and collect more runs.
+did not appear as high as the other environments, which could be worth more investigation in future experiments.
+To improve confidence in the All Actions Optimization algorithm, it may be worth applying the experimental methodology in this project to more environments and to collect more learning efficiency samples.
 
 ## How to run
 
@@ -191,8 +191,8 @@ python3 rl_aao.py
 
 The bottom of the rl_aao.py file contains all of the hyperparameters that can be changed for different experimental conditions.
 
-As the hyperparameters are set up currently, experiments can be conducted exactly as presented in the paper by simple changing the index variable to either
-0 (CartPole-v1), 1 (LunarLander-v2), and 2 (Gridworld-10x10-1r-v0).
+As the hyperparameters are set up currently, experiments can be conducted exactly as presented in the paper by simply changing the index variable to either
+0 (CartPole-v1), 1 (LunarLander-v2), or 2 (Gridworld-10x10-1r-v0).
 
 There are some python package dependencies that will print to the terminal upon program execution. To ensure consistency, please make sure the version numbers
 match with the package versions currently installed.
