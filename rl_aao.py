@@ -1,23 +1,12 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.models import Sequential, Model
-from tensorflow.keras import initializers
-from tensorflow.keras.layers import Dense, Activation, LeakyReLU, LSTM, GRU, Dropout, Input, PReLU
-from keras import regularizers, losses
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 import keras
-import sys
-import os
-import random
-from datetime import datetime
 import time
-import gc
-from keras import backend as K
 import gym
-import math
-import threading
 from csv_writer import csv_writer
-import cProfile
 from gridworld_10x10_1r_v0 import Gridworld10x10
 
 class Experiment:
