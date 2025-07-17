@@ -3,7 +3,7 @@
 This reinforcement learning (RL) project seeks to implement, test, and compare a new, novel RL algorithm to a traditional
 RL algorithm similar to One Step TD learning.
 
-The complete paper is available [here](rl_aao_paper_v2.pdf).
+The complete paper is available [here](rl_aao_paper_v3.pdf).
 
 ## Motivation
 
